@@ -4,3 +4,4 @@ app:
 data:
     type: rest
     resource: AppBundle\Controller\DefaultController
+    prefix: /api
