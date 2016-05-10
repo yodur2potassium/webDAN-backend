@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\FOSRestController;
 
 /**
- * 
+ * This Controller uses FOSRest autorouting
  */
 
 class DefaultController extends FOSRestController
@@ -25,10 +25,11 @@ class DefaultController extends FOSRestController
     }
     
     public function getTestAction() {
-        $data = ["message"=>"plop!"];
+        $data = $this->getDoctrine()->getRepository('AppBundle:Article')->find(1);
         $view = $this->view($data,200)
                 ->setTemplate("AppBundle:Data:test.html.twig")
-                ->setTemplateVar("data");
+                ->setTemplateVar("data")
+                ->setHeader("Access-Control-Allow-Origin", "*");
                 
         return $this->handleView($view);
     }
@@ -37,7 +38,8 @@ class DefaultController extends FOSRestController
         $data = ["message"=>"error"];
         $view = $this->view($data,200)
                 ->setTemplate("AppBundle:Data:test.html.twig")
-                ->setTemplateVar("data");
+                ->setTemplateVar("data")
+                ->setHeader("Access-Control-Allow-Origin", "*");
                 
         return $this->handleView($view);
     }

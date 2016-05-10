@@ -55,6 +55,11 @@ class Article
      * @ORM\Column(name="created", type="datetimetz")
      */
     private $created;
+    
+    function __construct() {
+        $this->created = new \DateTime();
+        $this->author = "Anonyme";
+    }
 
 
     /**
