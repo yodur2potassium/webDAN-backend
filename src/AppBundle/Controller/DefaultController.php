@@ -30,7 +30,7 @@ class DefaultController extends FOSRestController
      */
     public function getTestAction() {
         $data = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
-        $view = $this->view($data,200)
+        $view = $this->view($data[0],200)
                 ->setTemplate("AppBundle:Data:test.html.twig")
                 ->setTemplateVar("data")
                 ->setHeader("Access-Control-Allow-Origin", "*");

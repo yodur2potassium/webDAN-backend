@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use AppBundle\Entity\Image;
 
 /**
  * Article
@@ -64,11 +63,19 @@ class Article
      * @ORM\OneToMany(targetEntity="Image", mappedBy="article") 
      */
     private $images;
-            
+    
+    /**
+     * @var array
+     * 
+     * @ORM\OneToMany(targetEntity="Video", mappedBy="article") 
+     */
+    private $videos;
+     
    public  function __construct() {
         $this->created = new \DateTime();
         $this->author = "Anonyme";
         $this->images = new ArrayCollection();
+        $this->videos = new ArrayCollection();
     }
 
 
@@ -209,7 +216,7 @@ class Article
      *
      * @return Article
      */
-    public function addImage(Image $image)
+    public function addImage(\AppBundle\Entity\Image $image)
     {
         $this->images[] = $image;
         $image->setArticle($this);
@@ -222,7 +229,7 @@ class Article
      *
      * @param \AppBundle\Entity\Image $image
      */
-    public function removeImage(Image $image)
+    public function removeImage(\AppBundle\Entity\Image $image)
     {
         $this->images->removeElement($image);
     }
@@ -235,5 +242,40 @@ class Article
     public function getImages()
     {
         return $this->images;
+    }
+
+    /**
+     * Add video
+     *
+     * @param \AppBundle\Entity\Video $video
+     *
+     * @return Article
+     */
+    public function addVideo(\AppBundle\Entity\Video $video)
+    {
+        $this->videos[] = $video;
+        $video->setArticle($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove video
+     *
+     * @param \AppBundle\Entity\Video $video
+     */
+    public function removeVideo(\AppBundle\Entity\Video $video)
+    {
+        $this->videos->removeElement($video);
+    }
+
+    /**
+     * Get videos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVideos()
+    {
+        return $this->videos;
     }
 }
