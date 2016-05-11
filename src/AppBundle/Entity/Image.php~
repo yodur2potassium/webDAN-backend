@@ -129,28 +129,5 @@ class Image
     {
         return $this->source;
     }
-
-    /**
-     * Set article
-     *
-     * @param \AppBundle\Entity\Article $article
-     *
-     * @return Image
-     */
-    public function setArticle(\AppBundle\Entity\Article $article = null)
-    {
-        $this->article = $article;
-
-        return $this;
-    }
-
-    /**
-     * Get article
-     *
-     * @return \AppBundle\Entity\Article
-     */
-    public function getArticle()
-    {
-        return $this->article;
-    }
 }
+

@@ -24,8 +24,12 @@ class DefaultController extends FOSRestController
         ]);
     }
     
+    /**
+     * This Action is for test purposes only, return an Article with Pictures
+     * and Video linked to Errors
+     */
     public function getTestAction() {
-        $data = $this->getDoctrine()->getRepository('AppBundle:Article')->find(1);
+        $data = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
         $view = $this->view($data,200)
                 ->setTemplate("AppBundle:Data:test.html.twig")
                 ->setTemplateVar("data")
