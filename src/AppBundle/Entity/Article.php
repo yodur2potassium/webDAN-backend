@@ -25,16 +25,16 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="title1", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $title1;
+    private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title2", type="string", length=255)
+     * @ORM\Column(name="subtitle", type="string", length=255)
      */
-    private $title2;
+    private $subtitle;
 
     /**
      * @var string
@@ -101,13 +101,13 @@ class Article
     /**
      * Set title1
      *
-     * @param string $title1
+     * @param string $title
      *
      * @return Article
      */
-    public function setTitle1($title1)
+    public function setTitle($title)
     {
-        $this->title1 = $title1;
+        $this->title = $title;
 
         return $this;
     }
@@ -117,21 +117,21 @@ class Article
      *
      * @return string
      */
-    public function getTitle1()
+    public function getTitle()
     {
-        return $this->title1;
+        return $this->title;
     }
 
     /**
      * Set title2
      *
-     * @param string $title2
+     * @param string $subtitle
      *
      * @return Article
      */
-    public function setTitle2($title2)
+    public function setSubtitle($subtitle)
     {
-        $this->title2 = $title2;
+        $this->subtitle = $subtitle;
 
         return $this;
     }
@@ -141,9 +141,9 @@ class Article
      *
      * @return string
      */
-    public function getTitle2()
+    public function getSubtitle()
     {
-        return $this->title2;
+        return $this->subtitle;
     }
 
     /**

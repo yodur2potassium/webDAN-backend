@@ -21,16 +21,16 @@ use AppBundle\Entity\Test;
 class LoadTestData implements FixtureInterface{
 
     public function load(ObjectManager $manager) {
-        $testData = new Test();
-        $testData->setContent("Plop!");
-        
-        $manager->persist($testData);
-        $manager->flush();
-        
-        $testData2 = new Test();
-        $testData2->setContent("Plop, plop!");
-        
-        $manager->persist($testData2);
-        $manager->flush();
+//        $testData = new Test();
+//        $testData->setContent("Plop!");
+//        
+//        $manager->persist($testData);
+//        $manager->flush();
+//        
+//        $testData2 = new Test();
+//        $testData2->setContent("Plop, plop!");
+//        
+//        $manager->persist($testData2);
+//        $manager->flush();
     }
 }
