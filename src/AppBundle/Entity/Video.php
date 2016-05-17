@@ -50,11 +50,21 @@ class Video
     private $source;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Article", inversedBy="images")
+     * @ORM\ManyToOne(targetEntity="Article", inversedBy="videos")
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
      */
     private $article;
 
+    /**
+     * @var array
+     * 
+     * @ORM\OneToMany(targetEntity="Error", mappedBy="video")
+     */
+    private $errors;
+    
+    public function __construct() {
+        $this->errors = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
@@ -185,5 +195,39 @@ class Video
     public function getArticle()
     {
         return $this->article;
+    }
+
+    /**
+     * Add error
+     *
+     * @param \AppBundle\Entity\Error $error
+     *
+     * @return Video
+     */
+    public function addError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors[] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Remove error
+     *
+     * @param \AppBundle\Entity\Error $error
+     */
+    public function removeError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors->removeElement($error);
+    }
+
+    /**
+     * Get errors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getErrors()
+    {
+        return $this->errors;
     }
 }

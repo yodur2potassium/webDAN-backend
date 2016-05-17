@@ -20,7 +20,7 @@ class Image
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+   
     /**
      * @var string
      *
@@ -47,7 +47,18 @@ class Image
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
      */
     private $article;
-
+    
+    /**
+     * @var array
+     * 
+     * @ORM\OneToMany(targetEntity="Error", mappedBy="image")
+     */
+    private $errors;
+    
+    public function __construct() {
+        $this->errors = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -152,5 +163,63 @@ class Image
     public function getArticle()
     {
         return $this->article;
+    }
+
+    /**
+     * Add error
+     *
+     * @param \AppBundle\Entity\Error $error
+     *
+     * @return Image
+     */
+    public function addError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors[] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Remove error
+     *
+     * @param \AppBundle\Entity\Error $error
+     */
+    public function removeError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors->removeElement($error);
+    }
+
+    /**
+     * Get errors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getErrors()
+    {
+        return $this->errors;
+    }
+
+    /**
+     * Set exportId
+     *
+     * @param string $exportId
+     *
+     * @return Image
+     */
+    public function setExportId($exportId)
+    {
+        $this->exportId = $exportId;
+
+        return $this;
+    }
+
+    /**
+     * Get exportId
+     *
+     * @return string
+     */
+    public function getExportId()
+    {
+        return $this->exportId;
     }
 }

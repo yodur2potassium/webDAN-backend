@@ -20,6 +20,13 @@ class Image
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @ORM\Column(name="export_id", type="string")
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="AppBundle\Entity\CustomIdGenerator")
+     */
+    private $exportId;
 
     /**
      * @var string
@@ -47,7 +54,7 @@ class Image
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
      */
     private $article;
-
+    
     /**
      * Get id
      *
@@ -129,5 +136,62 @@ class Image
     {
         return $this->source;
     }
-}
 
+    /**
+     * Set article
+     *
+     * @param \AppBundle\Entity\Article $article
+     *
+     * @return Image
+     */
+    public function setArticle(\AppBundle\Entity\Article $article = null)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \AppBundle\Entity\Article
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * Add error
+     *
+     * @param \AppBundle\Entity\Error $error
+     *
+     * @return Image
+     */
+    public function addError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors[] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Remove error
+     *
+     * @param \AppBundle\Entity\Error $error
+     */
+    public function removeError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors->removeElement($error);
+    }
+
+    /**
+     * Get errors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getErrors()
+    {
+        return $this->errors;
+    }
+}

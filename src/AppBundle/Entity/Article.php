@@ -70,12 +70,21 @@ class Article
      * @ORM\OneToMany(targetEntity="Video", mappedBy="article") 
      */
     private $videos;
-     
-   public  function __construct() {
+    
+    /**
+     * @var array
+     * 
+     * @ORM\OneToMany(targetEntity="Error", mappedBy="article")
+     */
+    private $errors;
+    
+  
+    public  function __construct() {
         $this->created = new \DateTime();
         $this->author = "Anonyme";
         $this->images = new ArrayCollection();
         $this->videos = new ArrayCollection();
+        $this->errors = new ArrayCollection();
     }
 
 
@@ -277,5 +286,39 @@ class Article
     public function getVideos()
     {
         return $this->videos;
+    }
+
+    /**
+     * Add error
+     *
+     * @param \AppBundle\Entity\Error $error
+     *
+     * @return Article
+     */
+    public function addError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors[] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Remove error
+     *
+     * @param \AppBundle\Entity\Error $error
+     */
+    public function removeError(\AppBundle\Entity\Error $error)
+    {
+        $this->errors->removeElement($error);
+    }
+
+    /**
+     * Get errors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getErrors()
+    {
+        return $this->errors;
     }
 }

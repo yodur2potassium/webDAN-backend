@@ -78,23 +78,25 @@ class Error
     private $created;
     
     /**
+     * 
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="errors")
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
      */
     private $article;
     
     /**
+     * 
      * @ORM\ManyToOne(targetEntity="Image", inversedBy="errors")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
      */
     private $image;
-    
-    /**
+
+     /**
+     * 
      * @ORM\ManyToOne(targetEntity="Video", inversedBy="errors")
      * @ORM\JoinColumn(name="video_id", referencedColumnName="id")
      */
     private $video;
-   
     
     public function __construct() {
         $this->created = new \DateTime;
@@ -286,90 +288,5 @@ class Error
     public function getCreated() {
         return $this->created;
     }
-
-    /**
-     * Set created
-     *
-     * @param \DateTime $created
-     *
-     * @return Error
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
-     * Set article
-     *
-     * @param \AppBundle\Entity\Article $article
-     *
-     * @return Error
-     */
-    public function setArticle(\AppBundle\Entity\Article $article = null)
-    {
-        $this->article = $article;
-
-        return $this;
-    }
-
-    /**
-     * Get article
-     *
-     * @return \AppBundle\Entity\Article
-     */
-    public function getArticle()
-    {
-        return $this->article;
-    }
-
-    /**
-     * Set image
-     *
-     * @param \AppBundle\Entity\Image $image
-     *
-     * @return Error
-     */
-    public function setImage(\AppBundle\Entity\Image $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \AppBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Set video
-     *
-     * @param \AppBundle\Entity\Video $video
-     *
-     * @return Error
-     */
-    public function setVideo(\AppBundle\Entity\Video $video = null)
-    {
-        $this->video = $video;
-
-        return $this;
-    }
-
-    /**
-     * Get video
-     *
-     * @return \AppBundle\Entity\Video
-     */
-    public function getVideo()
-    {
-        return $this->video;
-    }
 }
+

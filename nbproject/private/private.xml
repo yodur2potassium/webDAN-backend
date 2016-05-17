@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/Image.php</file>
-            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/Error.php</file>
             <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/Article.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/Image.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/DataFixtures/ORM/LoadTestData.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/Video.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/ClassIdGenerator.php</file>
+            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/Entity/Test.php</file>
             <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/DataFixtures/ORM/LoadImageData.php</file>
-            <file>file:/C:/Users/XNEF424/Documents/NetBeansProjects/webDAN/backend-symfony/src/AppBundle/DataFixtures/ORM/LoadArticleData.php</file>
         </group>
     </open-files>
 </project-private>
