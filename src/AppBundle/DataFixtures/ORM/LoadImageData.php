@@ -25,7 +25,7 @@ class LoadImageData extends AbstractFixture implements OrderedFixtureInterface
         //Set the test data to persist in DB here
         $imageData = new Image();
         $source = "http://lorempixel.com/400/200";
-        $imageData->setDescription("A test picture for fixture")
+        $imageData->setDescription("")
                 ->setCaption("A useless subtitle for the image")
                 ->setSource($source);
         // Persist the data

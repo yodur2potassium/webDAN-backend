@@ -29,7 +29,7 @@ class DefaultController extends FOSRestController
      * and Video linked to Errors
      */
     public function getTestAction() {
-        $data = $this->getDoctrine()->getRepository('AppBundle:Image')->findAll();
+        $data = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
         $view = $this->view($data[0],200)
                 ->setTemplate("AppBundle:Data:test.html.twig")
                 ->setTemplateVar("data")

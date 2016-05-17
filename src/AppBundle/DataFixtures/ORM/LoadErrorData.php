@@ -23,6 +23,8 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
 
     
     public function load(ObjectManager $manager) {
+        
+        // Ajoute une erreur a l'image
         $errorImageData = new Error();
         $errorImageData->setImage($this->getReference('image-test'))
                 ->setTitle("Titre de l'erreur lié a l'image")
@@ -36,6 +38,19 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
         $manager->persist($errorImageData);
         $manager->flush();
         
+        // Ajoute une erreur à l'article
+        $errorArticleData = new Error();
+        $errorArticleData->setArticle($this->getReference('article-test'))
+                ->setTitle("Titre de l'erreur lié a l'article")
+                ->setDescription("Description de l'erreur liée à l'article")
+                ->setAccedeCode(2)
+                ->setInternCode(2)
+                ->setDocLinks("http://dummy.net.address")
+                ->setTarget('subtitle')
+                ->setCorrection("<h2>Subtitle</h2>");
+        
+        $manager->persist($errorArticleData);
+        $manager->flush();
     }
 
     public function getOrder() {
