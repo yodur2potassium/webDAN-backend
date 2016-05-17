@@ -57,16 +57,16 @@ class Error
     private $accedeCode;
 
     /**
-     * @var array
+     * @var string
      *  Array of web links to documentation and good practices on the error
-     * @ORM\Column(name="docLinks", type="array")
+     * @ORM\Column(name="docLinks", type="string", length=255)
      */
-    private $docLinks = [];
+    private $docLinks;
 
     /**
      * @var string
      *  Name of the attribute the error refer to
-     * @ORM\Column(name="targets", type="array")
+     * @ORM\Column(name="target", type="string", length=255)
      */
     private $target;
     
@@ -233,7 +233,7 @@ class Error
     /**
      * Set docLinks
      *
-     * @param array $docLinks
+     * @param string $docLinks
      *
      * @return Error
      */
@@ -247,7 +247,7 @@ class Error
     /**
      * Get docLinks
      *
-     * @return array
+     * @return string
      */
     public function getDocLinks()
     {
