@@ -57,11 +57,10 @@ class Error
     private $accedeCode;
 
     /**
-     * @var string
      *  Array of web links to documentation and good practices on the error
-     * @ORM\Column(name="docLinks", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="Documentation", mappedBy="error")
      */
-    private $docLinks;
+    private $documentations;
 
     /**
      * @var string
@@ -231,31 +230,7 @@ class Error
     }
 
     /**
-     * Set docLinks
-     *
-     * @param string $docLinks
-     *
-     * @return Error
-     */
-    public function setDocLinks($docLinks)
-    {
-        $this->docLinks = $docLinks;
-
-        return $this;
-    }
-
-    /**
-     * Get docLinks
-     *
-     * @return string
-     */
-    public function getDocLinks()
-    {
-        return $this->docLinks;
-    }
-
-    /**
-     * Set targets
+     * Set target
      *
      * @param string $target
      *
@@ -371,5 +346,41 @@ class Error
     public function getVideo()
     {
         return $this->video;
+    }
+
+    /**
+     * Add documentation
+     *
+     * @param \AppBundle\Entity\Documentation $documentation
+     *
+     * @return Error
+     */
+    public function addDocumentation(\AppBundle\Entity\Documentation $documentation)
+    {
+        $this->documentations[] = $documentation;
+        $documentation->setError($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove documentation
+     *
+     * @param \AppBundle\Entity\Documentation $documentation
+     */
+    public function removeDocumentation(\AppBundle\Entity\Documentation $documentation)
+    {
+        $this->documentations->removeElement($documentation);
+        $documentation->setError(null);
+    }
+
+    /**
+     * Get documentations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocumentations()
+    {
+        return $this->documentations;
     }
 }

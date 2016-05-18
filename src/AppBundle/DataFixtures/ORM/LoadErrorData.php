@@ -31,7 +31,7 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
                 ->setDescription("Description de l'erreur liée à l'image")
                 ->setAccedeCode(1)
                 ->setInternCode(1)
-                ->setDocLinks("http://dummy.net.address")
+                ->addDocumentation($this->getReference('doc-test'))
                 ->setTarget('description')
                 ->setCorrection("This is the description of the image linked to the error");
         
@@ -45,7 +45,8 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
                 ->setDescription("Description de l'erreur liée à l'article")
                 ->setAccedeCode(2)
                 ->setInternCode(2)
-                ->setDocLinks("http://dummy.net.address")
+                ->addDocumentation($this->getReference('doc-test2'))
+                ->addDocumentation($this->getReference('doc-test3'))
                 ->setTarget('subtitle')
                 ->setCorrection("<h2>Subtitle</h2>");
         
@@ -57,6 +58,6 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
         // the order in which fixtures will be loaded
         // the lower the number, the sooner that this fixture is loaded
         // this one need to be loaded after ImageData and VideoData
-        return 5;   
+        return 6;   
     }
 }

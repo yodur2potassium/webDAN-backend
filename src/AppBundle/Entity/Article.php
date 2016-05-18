@@ -99,7 +99,7 @@ class Article
     }
 
     /**
-     * Set title1
+     * Set title
      *
      * @param string $title
      *
@@ -113,7 +113,7 @@ class Article
     }
 
     /**
-     * Get title1
+     * Get title
      *
      * @return string
      */
@@ -123,7 +123,7 @@ class Article
     }
 
     /**
-     * Set title2
+     * Set subtitle
      *
      * @param string $subtitle
      *
@@ -137,7 +137,7 @@ class Article
     }
 
     /**
-     * Get title2
+     * Get subtitle
      *
      * @return string
      */
