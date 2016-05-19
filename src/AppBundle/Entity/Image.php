@@ -199,27 +199,4 @@ class Image
         return $this->errors;
     }
 
-    /**
-     * Set exportId
-     *
-     * @param string $exportId
-     *
-     * @return Image
-     */
-    public function setExportId($exportId)
-    {
-        $this->exportId = $exportId;
-
-        return $this;
-    }
-
-    /**
-     * Get exportId
-     *
-     * @return string
-     */
-    public function getExportId()
-    {
-        return $this->exportId;
-    }
 }
