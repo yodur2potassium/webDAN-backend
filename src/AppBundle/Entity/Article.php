@@ -6,7 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Article
+ * Classe Article, peut comprendre une ou plusieurs Image et/ou Video
+ *  et être lié à une ou plusieurs Erreur
+ * Table "article" en BDD
  *
  * @ORM\Table(name="article")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
@@ -24,56 +26,56 @@ class Article
 
     /**
      * @var string
-     *
+     * Titre de l'article, formatté HTML
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
-     *
+     * Sous titre, ou courte phrase descriptive, formatté HTML
      * @ORM\Column(name="subtitle", type="string", length=255)
      */
     private $subtitle;
 
     /**
      * @var string
-     *
+     * Contenu de l'article, formatté HTML
      * @ORM\Column(name="content", type="text")
      */
     private $content;
 
     /**
      * @var string
-     *
+     * Auteur, non pertinent, par défaut Anonyme...
      * @ORM\Column(name="author", type="string", length=255, nullable=true)
      */
     private $author;
 
     /**
      * @var \DateTime
-     *
+     * Date de création, automatique a l'instanciation
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
     
     /**
      * @var array
-     * 
+     * Tableau d'Images, peut être vide
      * @ORM\OneToMany(targetEntity="Image", mappedBy="article") 
      */
     private $images;
     
     /**
      * @var array
-     * 
+     * Tableau de Videos, peut être vide
      * @ORM\OneToMany(targetEntity="Video", mappedBy="article") 
      */
     private $videos;
     
     /**
      * @var array
-     * 
+     * Tableau d'Erreurs, peut être vide
      * @ORM\OneToMany(targetEntity="Error", mappedBy="article")
      */
     private $errors;
@@ -227,7 +229,9 @@ class Article
      */
     public function addImage(\AppBundle\Entity\Image $image)
     {
+        // Ajoute une Image au tableau
         $this->images[] = $image;
+        // Reciproque, associe l'Article a Image
         $image->setArticle($this);
 
         return $this;
@@ -240,7 +244,9 @@ class Article
      */
     public function removeImage(\AppBundle\Entity\Image $image)
     {
+        // Retire la relation Article/Image
         $this->images->removeElement($image);
+        $image->setArticle();
     }
 
     /**
@@ -262,7 +268,9 @@ class Article
      */
     public function addVideo(\AppBundle\Entity\Video $video)
     {
+        // Ajoute une Video au tableau
         $this->videos[] = $video;
+        // Réciproque, associe l'Article à une Video
         $video->setArticle($this);
 
         return $this;
@@ -275,7 +283,9 @@ class Article
      */
     public function removeVideo(\AppBundle\Entity\Video $video)
     {
+        // Retire la relation Article/Video
         $this->videos->removeElement($video);
+        $video->setArticle();
     }
 
     /**
@@ -296,9 +306,11 @@ class Article
      * @return Article
      */
     public function addError(\AppBundle\Entity\Error $error)
-    {
+    {        
+        // Ajoute une Erreur au tableau
         $this->errors[] = $error;
-
+        // Réciproque, associe l'Article à une Erreur
+        $error->setArticle($this);
         return $this;
     }
 
@@ -308,8 +320,10 @@ class Article
      * @param \AppBundle\Entity\Error $error
      */
     public function removeError(\AppBundle\Entity\Error $error)
-    {
+    {       
+        // Retire la relation Article/Video
         $this->errors->removeElement($error);
+        $error->setArticle();
     }
 
     /**

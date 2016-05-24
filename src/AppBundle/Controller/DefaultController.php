@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\FOSRestController;
 
 /**
+ * Ce controller utilise l'autorouting du FOSRestBundle
+ * 
  * This Controller uses FOSRest autorouting
  */
 
@@ -25,6 +27,9 @@ class DefaultController extends FOSRestController
     }
     
     /**
+     * Cette action ne sert qu'a tester le web service, retourne tout les Articles
+     * présent en BDD avec Images, Videos et Erreurs liées
+     * 
      * This Action is for test purposes only, return an Article with Pictures
      * and Video linked to Errors
      */
@@ -47,4 +52,5 @@ class DefaultController extends FOSRestController
                 
         return $this->handleView($view);
     }
+    // TODO: Créer les actions pour récuperer les articles par ID ainsi que la liste des Erreurs
 }

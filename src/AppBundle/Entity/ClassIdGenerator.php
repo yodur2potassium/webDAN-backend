@@ -11,7 +11,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Id\AbstractIdGenerator;
 
 /**
- * Description of ClassIdGenerator
+ * Tentative de génération d'ids uniques pour simplifier les relations en BDD
+ *  abandonné, conservé pour dossier personel
  *
  * @author xnef424
  */

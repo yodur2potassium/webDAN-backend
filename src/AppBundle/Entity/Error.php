@@ -5,7 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Error
+ * Classe Error, décrit une erreur et ses solutions, peut être liée à un Article, une Image,
+ *  une Video ou null
  *
  * @ORM\Table(name="error")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ErrorRepository")
@@ -23,13 +24,15 @@ class Error
 
     /**
      * @var string
-     *  Title of the error
+     * Titre synthétique de l'erreur
+     * Title of the error
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
+     * Description de l'erreur et solutions pour y remedier, avec exemple de code si besoin
      *  Description of the error and solution with code exemple (if needed)
      * @ORM\Column(name="description", type="text")
      */
@@ -37,6 +40,7 @@ class Error
 
     /**
      * @var string
+     * Bloc de code remplaçant celui contenu par l'attribut de l'entité concerné par l'erreur
      *  Block of code to fix the attribute the error is linked to
      * @ORM\Column(name="correction", type="text")
      */
@@ -44,6 +48,7 @@ class Error
 
     /**
      * @var int
+     * Code "interne", utilisé pour lier visuellement l'erreur a son objet
      *  Code used to visualy link error to object
      * @ORM\Column(name="internCode", type="integer", unique=true)
      */
@@ -51,12 +56,15 @@ class Error
 
     /**
      * @var int
+     * Code réference à la notice AcceDe Web
      *  Code referencing the error on external site (AccedeWeb)
      * @ORM\Column(name="accedeCode", type="integer")
      */
     private $accedeCode;
 
     /**
+     * @var array
+     * Tableau de Documentation, liens vers ressources externes
      *  Array of web links to documentation and good practices on the error
      * @ORM\OneToMany(targetEntity="Documentation", mappedBy="error")
      */
@@ -64,6 +72,7 @@ class Error
 
     /**
      * @var string
+     * Nom de l'attribut lié à l'erreur
      *  Name of the attribute the error refer to
      * @ORM\Column(name="target", type="string", length=255)
      */
@@ -71,24 +80,27 @@ class Error
     
     /**
      * @var Date
-     * 
+     * Date de création, auto à l'instanciation...
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
     
     /**
+     * Article lié a l'erreur, peut être null
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="errors")
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
      */
     private $article;
     
     /**
+     * Image liée a l'erreur, peut être null
      * @ORM\ManyToOne(targetEntity="Image", inversedBy="errors")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
      */
     private $image;
     
     /**
+     * Video liée à l'erreur, peut être null
      * @ORM\ManyToOne(targetEntity="Video", inversedBy="errors")
      * @ORM\JoinColumn(name="video_id", referencedColumnName="id")
      */

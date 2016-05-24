@@ -15,6 +15,8 @@ use AppBundle\Entity\Test;
 
 /**
  * Description of LoadTestData
+ * 
+ * Fixture de test, abandoné pour le moment...
  *
  * @author xnef424
  */

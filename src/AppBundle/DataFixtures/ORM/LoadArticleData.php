@@ -14,15 +14,16 @@ use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Article;
 
 /**
+ * Fixtures de données pour l'entité Article
  * Data fixtures for Article Entity
- *
  * @author xnef424
  */
 class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager) {
 
-        //Set the test data to persist in DB here
+        // Set les données à inscrire en BDD
+        // Set the test data to persist in DB here
         $image = $this->getReference('image-test');
         $image2 = $this->getReference('image2-test');
         $articleData = new Article();
@@ -34,14 +35,18 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 ->addImage($image2)
                 ->addVideo($this->getReference('video-test'))
                 ;
+        // Persiste les données
         // Persist the data
         $manager->persist($articleData);
         $manager->flush();
         
+        // Crée une réference pour lier cette fixture avec une Erreur
         $this->addReference('article-test', $articleData);
     }
     
     public function getOrder() {
+        // Ordre de chargement des fixtures, le plus bas, le plus tôt...
+        // Celle ci doit être chargée après ImageData et VidéoData
         // the order in which fixtures will be loaded
         // the lower the number, the sooner that this fixture is loaded
         // this one need to be loaded after ImageData and VideoData

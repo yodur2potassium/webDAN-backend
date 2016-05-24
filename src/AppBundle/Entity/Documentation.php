@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Documentation
+ * Classe de Documentation, simple, relie Erreur à des ressources externes en FR ou EN
  *
  * @ORM\Table(name="documentation")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\DocumentationRepository")

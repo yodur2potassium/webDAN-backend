@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Video
+ * Classe Video, peut être liée a un Article
  *
  * @ORM\Table(name="video")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\VideoRepository")
@@ -23,33 +23,34 @@ class Video
 
     /**
      * @var string
-     *
+     * Description de la Video
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
 
     /**
      * @var string
-     *
+     * Transcritpion de la Video
      * @ORM\Column(name="transcription", type="text")
      */
     private $transcription;
 
     /**
      * @var string
-     *
+     * Sous titre informatif dut contenu
      * @ORM\Column(name="caption", type="string", length=255)
      */
     private $caption;
 
     /**
      * @var string
-     *
+     * Source de la Video, typiquement lien Libcast
      * @ORM\Column(name="source", type="string", length=255)
      */
     private $source;
 
     /**
+     * Article lié a la Video, peut être null
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="videos")
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
      */
@@ -57,7 +58,7 @@ class Video
 
     /**
      * @var array
-     * 
+     * Tableau d'Error, peut être null
      * @ORM\OneToMany(targetEntity="Error", mappedBy="video")
      */
     private $errors;
