@@ -208,7 +208,8 @@ class Video
     public function addError(\AppBundle\Entity\Error $error)
     {
         $this->errors[] = $error;
-
+        $error->setVideo($this);
+        
         return $this;
     }
 
@@ -220,6 +221,7 @@ class Video
     public function removeError(\AppBundle\Entity\Error $error)
     {
         $this->errors->removeElement($error);
+        $error->setVideo();
     }
 
     /**

@@ -9,7 +9,7 @@ use FOS\RestBundle\Controller\FOSRestController;
 
 /**
  * Ce controller utilise l'autorouting du FOSRestBundle
- * 
+ *
  * This Controller uses FOSRest autorouting
  */
 
@@ -25,11 +25,11 @@ class DefaultController extends FOSRestController
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
     }
-    
+
     /**
      * Cette action ne sert qu'a tester le web service, retourne tout les Articles
      * présent en BDD avec Images, Videos et Erreurs liées
-     * 
+     *
      * This Action is for test purposes only, return an Article with Pictures
      * and Video linked to Errors
      */
@@ -39,17 +39,48 @@ class DefaultController extends FOSRestController
                 ->setTemplate("AppBundle:Data:test.html.twig")
                 ->setTemplateVar("data")
                 ->setHeader("Access-Control-Allow-Origin", "*");
-                
+
         return $this->handleView($view);
     }
-    
-    public function getErrorAction() {
-        $data = ["message"=>"error"];
+
+    /**
+     * Recupère tout les Articles en BDD
+     * Renvoie un tableau
+     */
+    public function getArticlesAction() {
+        $data = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
         $view = $this->view($data,200)
                 ->setTemplate("AppBundle:Data:test.html.twig")
                 ->setTemplateVar("data")
                 ->setHeader("Access-Control-Allow-Origin", "*");
-                
+
+        return $this->handleView($view);
+    }
+
+    /**
+     * Recupère toutes les Erreurs en BDD
+     * Renvoie un tableau
+     */
+    public function getErrorsAction() {
+        $data = $this->getDoctrine()->getRepository('AppBundle:Error')->findAll();
+        $view = $this->view($data,200)
+                ->setTemplate("AppBundle:Data:test.html.twig")
+                ->setTemplateVar("data")
+                ->setHeader("Access-Control-Allow-Origin", "*");
+
+        return $this->handleView($view);
+    }
+
+    /**
+    * Recupère une Erreur par son id
+    */
+    public function getErrorAction($id) {
+        $data = $this->getDoctrine()->getRepository('AppBundle:Error')->find($id);
+        $view = $this->view($data,200)
+                ->setTemplate("AppBundle:Data:test.html.twig")
+                ->setTemplateVar("data")
+                ->setHeader("Access-Control-Allow-Origin", "*");
+
         return $this->handleView($view);
     }
     // TODO: Créer les actions pour récuperer les articles par ID ainsi que la liste des Erreurs
