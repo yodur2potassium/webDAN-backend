@@ -28,7 +28,7 @@ class LoadVideoData extends AbstractFixture implements OrderedFixtureInterface  
         $videoData->setDescription("A wonderful video with nice people in it")
                 ->setCaption("A subtitle describing whatever is in the video")
                 ->setTranscription("Usualy this is a very long text transcribing the video")
-                ->setSource("http://videos-dcom.laposte.fr/resource/groupe_national_perspec_20projets2020_vi/hd/sf_publication_channel/Widgets.mp4")
+                ->setSource("//videos-dcom.laposte.fr/widget/innovation_20pp_laureats2015-mp4")
                 ;
         // Persiste les données
         // Persist the data
