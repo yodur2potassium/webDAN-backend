@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Image {{ image.id }}</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Description (alt)</th>
+                <td>{{ image.description }}</td>
+            </tr>
+            <tr>
+                <th>Sous-titre</th>
+                <td>{{ image.caption }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{ image.source }}</td>
+            </tr>
+            {% if image.article is not empty %}
+            <tr>
+                <th>Article lié</th>
+                <td>
+                    <a href="{{ path('admin_article_show', { 'id': image.article.id }) }}">{{ image.article.id }}</a>
+                </td>
+            </tr>
+            {% endif %}
+            {% if image.errors is not empty %}
+            <tr>
+                <th>Erreurs liées</th>
+                <td>
+                    <ul>
+                    {% for error in image.errors %}
+                        <li><a>{{ error.title }} -> {{ error.target }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('admin_image_index') }}">Retour à la liste d'images</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_image_edit', { 'id': image.id }) }}">Editer</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

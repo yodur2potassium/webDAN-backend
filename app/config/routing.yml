@@ -3,5 +3,5 @@ app:
     type:     annotation
 data:
     type: rest
-    resource: AppBundle\Controller\DefaultController
+    resource: AppBundle\Controller\RestController
     prefix: /api

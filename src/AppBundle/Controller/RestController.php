@@ -13,7 +13,7 @@ use FOS\RestBundle\Controller\FOSRestController;
  * This Controller uses FOSRest autorouting
  */
 
-class DefaultController extends FOSRestController
+class RestController extends FOSRestController
 {
     /**
      * @Route("/", name="homepage")

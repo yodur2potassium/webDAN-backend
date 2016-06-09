@@ -40,7 +40,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 ->setContent("<p>Réuni le 30 juillet sous la présidence de Philippe Wahl, le conseil d'administration de La Poste a arrêté les comptes consolidés du Groupe La Poste pour le 1<sup>er</sup> semestre 2015.
                  Dans un contexte économique marqué par une légère reprise, les résultats semestriels du Groupe enregistrent une progression. Ils illustrent les premières réalisations de son plan stratégique La Poste 2020 : Conquérir l'avenir.</p>
                  <p>Cette évolution favorable est liée au dynamisme de l'ensemble des branches, plus particulièrement de GeoPost et de La Banque Postale, à la bonne maîtrise des charges et à la hausse des prix du courrier.</p>")
-                ->setAuthor("Albert Nonyme")
                 ->addImage($image)
                 ->addImage($image2)
                 ;
@@ -60,7 +59,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 <li>un résultat net part du Groupe de 424&nbsp;millions d'euros (+&nbsp;31,7&nbsp;%)</li>
                 <li>des capitaux propres part du Groupe de9 435 millions d'euros au 30&nbsp;juin&nbsp;2015, en progression de 322&nbsp;millions d'euros par rapport au 31&nbsp;décembre&nbsp;2014</li>
                 <li>une dette nette du Groupe de 3&nbsp;713&nbsp;millions d'euros, en diminution de 292&nbsp;millions d'euros par rapport à la dette&nbsp;2014.</li></ul>")
-                ->setAuthor("Albert Nonyme")
                 ;
         // Persiste les données
         // Persist the data
@@ -83,7 +81,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                   <p></p><li><strong>branche Numérique</strong>&nbsp;:<br>un chiffre d'affaires de 278&nbsp;millions d'euros (+&nbsp;4,9&nbsp;%)<br>
   		            résultat d'exploitation en amélioration (+&nbsp;29,7&nbsp;%) mais qui reste négatif (-&nbsp;9&nbsp;millions d'euros) compte tenu de différentes charges non récurrentes</li>
                   <li><strong>Réseau La Poste</strong>&nbsp;:<br>une activité bancaire en progression,<br>	un chiffre des ventes courrier-colis en légère croissance.</li></ul>")
-                ->setAuthor("Albert Nonyme")
                 ;
         // Persiste les données
         // Persist the data
@@ -101,7 +98,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 <li>    513&nbsp;millions d'euros de résultat net (-&nbsp;17,7&nbsp;%)</li><li>		1&nbsp;052&nbsp;millions d'euros d'investissement (997 millions d'euros en 2013)</li>
                 <li>		9,1&nbsp;milliards d'euros de capitaux propres consolidés</li><li>		4&nbsp;milliards d'euros de dette nette (+&nbsp;200&nbsp;millions d'euros par rapport à&nbsp;2013).<p></p>
                 </li></ul><p>La croissance a été principalement portée par le succès de GeoPost et de ses solutions de livraison à valeur ajoutée et par le dynamisme commercial de La&nbsp;Banque Postale. Ils permettent de compenser les effets de la dématérialisation sur les autres branches du Groupe<em>.</em></p>")
-                ->setAuthor("Albert Nonyme")
                 ->addImage($image3)
                 ->addImage($image4)
                 ;
@@ -125,7 +121,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                       <li><strong>Réseau La Poste</strong> :<br>		2,3&nbsp;milliards d'euros de ventes (courrier, colis postaux et express) (-&nbsp;2,5&nbsp;%)<br>
 		                    Il a réalisé 100&nbsp;% des encours de collecte des ménages, 82,4&nbsp;% des crédits immobiliers et 68&nbsp;% des crédits à la consommation</li>
                         <li><strong>branche Numérique </strong><br>		539 millions d'euros de chiffre d'affaires (-&nbsp;1,7&nbsp;%).</li>")
-                ->setAuthor("Albert Nonyme")
                 ->addImage($image5)
                 ->addImage($image6)
                 ;
@@ -150,7 +145,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 <li>		<strong>le 5 février, </strong>La Poste et les organisations syndicales ont signé 3&nbsp;accords majoritaires pour faire des postiers les acteurs et les bénéficiaires de la transformation de l'entreprise</li>
                 <li>		<strong>le 20 janvier, </strong>Philippe Wahl a annoncé les noms des 3 lauréats du concours d'innovation 20&nbsp;projets pour&nbsp;2020. Les projets Post'lib, Kiss&nbsp;Keys et Animaléo ont été sélectionnés et une nouvelle étape débute pour les postiers qui les ont présentés : la mise en œuvre et la commercialisation de leur projet.</li>
                 </ul>")
-                ->setAuthor("Albert Nonyme")
                 ->addVideo($video)
                 ;
         // Persiste les données
@@ -171,7 +165,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 <li>		<strong>le 20 février</strong>, Le Groupe La&nbsp;Poste a présenté des résultats&nbsp;2013 en inflexion avec un chiffre d'affaires de 22&nbsp;084&nbsp;millions d'euros (+&nbsp;2&nbsp;%) et un résultat d'exploitation de 770&nbsp;millions d'euros (-&nbsp;5,6&nbsp;%). La baisse des volumes du courrier et la baisse de la fréquentation des bureaux de poste ont continué. Elles n'ont pu être totalement compensées par la croissance de La&nbsp;Banque Postale et&nbsp; du Colis-Express ainsi que par le déploiement des nouvelles activités</li>
                 <li>		<strong>le 28 janvier</strong>, Philippe Wahl a présenté au conseil d'administration de La&nbsp;Poste les orientations du plan stratégique du Groupe&nbsp;: La&nbsp;Poste&nbsp;2020&nbsp;: conquérir l'avenir. Une nouvelle vision pour le Groupe en adéquation avec ses valeurs, ses missions fondamentales et ses savoir-faire</li>
                 <li>		<strong>le 9 janvier</strong>, Arnaud Montebourg, ministre du Redressement productif, et Philippe Wahl, PDG du Groupe, se sont vu remettre les avis des 3&nbsp;groupes de citoyens ruraux, urbains et d'entrepreneurs (TPE) sur l'avenir de La&nbsp;Poste, avec des propositions d'évolution et leurs attentes concrètes vis-à-vis de l'entreprise.</li>")
-                ->setAuthor("Albert Nonyme")
                 ->addImage($image7)
                 ->addImage($image8)
                 ;
@@ -193,7 +186,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 <li>		<strong>les 17 et 18 septembre</strong>,<strong> </strong>les commissions des affaires économiques de l\'Assemblée nationale et du Sénat auditionnent Philippe Wahl et approuvent sa nomination en qualité de président du conseil d\'administration de La&nbsp;Poste</li>
                 <li>		<strong>le 1<sup>er</sup> août</strong>, le conseil d\'administration de La Poste nomme Philippe Wahl administrateur et le propose pour le poste de président du conseil d\'administration.</li>
                 </ul>")
-                ->setAuthor("Albert Nonyme")
                 ->addImage($image9)
                 ;
         // Persiste les données
@@ -235,7 +227,6 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
                 <p><strong>&gt;</strong>  <strong>Le comité de management</strong> est une instance d'information. Il comprend 400 membres.</p>
                 <p><strong>L'ensemble des filiales de 1<sup>er</sup> niveau, GeoPost, Poste Immo, Sofipost et La Banque Postale</strong>, ont désormais repris les principes de gouvernance du Groupe. Leurs instances de gouvernance comprennent des administrateurs indépendants, qui président les comités d'audit et stratégique. Ces évolutions s'inspirent des meilleures pratiques de gouvernance promues par l'Agence des participations de l'Etat (APE).</p>
                 <p> </p></p>")
-                ->setAuthor("Albert Nonyme")
                 ;
         // Persiste les données
         // Persist the data
