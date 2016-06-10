@@ -19,40 +19,40 @@ use AppBundle\Entity\Error;
  * @author xnef424
  */
 class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
-    
 
-    
+
+
     public function load(ObjectManager $manager) {
         // Set les données à inscrire en BDD
         // Set the test data to persist in DB here
         $errorImageData = new Error();
         // Ajoute une erreur a l'image
         $errorImageData->setImage($this->getReference('image-test'))
-                ->setTitle("Titre de l'erreur lié a l'image")
-                ->setDescription("Description de l'erreur liée à l'image")
+                ->setTitle("Certaines images informatives n’ont pas d’alternatives textuelles renseignées avec l’information véhiculée par l’image")
+                ->setDescription("Lorsqu’une balise <img /> ou <input type=\"image\" /> informative est intégrée dans le code HTML, renseigner son attribut alt avec une information égale ou équivalente à celle véhiculée par l’image.")
                 ->setAccedeCode(1)
                 ->setInternCode(1)
                 ->addDocumentation($this->getReference('doc-test'))
                 ->setTarget('description')
-                ->setCorrection("This is the description of the image linked to the error");
+                ->setCorrection("Texte décrivant l'image");
         // Persiste les données
         // Persist the data
         $manager->persist($errorImageData);
         $manager->flush();
-        
+
         // Set les données à inscrire en BDD
         // Set the test data to persist in DB here
         $errorArticleData = new Error();
         // Ajoute une erreur à l'article
         $errorArticleData->setArticle($this->getReference('article-test'))
-                ->setTitle("Titre de l'erreur lié a l'article")
-                ->setDescription("Description de l'erreur liée à l'article")
+                ->setTitle("Les balises de titres allant de <h1> jusqu’à <h6> ne sont pas utilisées pour baliser les titres dans certaines pages")
+                ->setDescription("Sur chaque page, utiliser les balises de titres allant de <h1> jusqu’à <h6>. La structure des titres doit être à la fois logique et exhaustive, tous les éléments ayant valeur de titres doivent blaisé comme tels et il ne doit pas y avoir de « sauts » ni d’incohérences dans la structure de ceux-ci.")
                 ->setAccedeCode(2)
                 ->setInternCode(2)
                 ->addDocumentation($this->getReference('doc-test2'))
                 ->addDocumentation($this->getReference('doc-test3'))
                 ->setTarget('subtitle')
-                ->setCorrection("<h2>Subtitle</h2>");
+                ->setCorrection("<h4>&gt;Les chiffres du Groupe pour le 1<sup>er</sup> semestre</h4>");
         // Persiste les données
         // Persist the data
         $manager->persist($errorArticleData);
@@ -65,6 +65,6 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
         // the order in which fixtures will be loaded
         // the lower the number, the sooner that this fixture is loaded
         // this one need to be loaded after ImageData and VideoData
-        return 6;   
+        return 6;
     }
 }
