@@ -46,7 +46,7 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
         // Ajoute une erreur à l'article
         $errorArticleData->setArticle($this->getReference('article-test'))
                 ->setTitle("Les balises de titres allant de <h1> jusqu’à <h6> ne sont pas utilisées pour baliser les titres dans certaines pages")
-                ->setDescription("Sur chaque page, utiliser les balises de titres allant de <h1> jusqu’à <h6>. La structure des titres doit être à la fois logique et exhaustive, tous les éléments ayant valeur de titres doivent blaisé comme tels et il ne doit pas y avoir de « sauts » ni d’incohérences dans la structure de ceux-ci.")
+                ->setDescription("Sur chaque page, utiliser les balises de titres allant de <h1> jusqu’à <h6>. La structure des titres doit être à la fois logique et exhaustive, tous les éléments ayant valeur de titres doivent être balisés comme tels et il ne doit pas y avoir de « sauts » ni d’incohérences dans la structure de ceux-ci.")
                 ->setAccedeCode(2)
                 ->setInternCode(2)
                 ->addDocumentation($this->getReference('doc-test2'))
