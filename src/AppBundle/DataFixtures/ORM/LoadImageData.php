@@ -25,7 +25,6 @@ class LoadImageData extends AbstractFixture implements OrderedFixtureInterface
         // Set les données à inscrire en BDD
         //Set the test data to persist in DB here
         $imageData = new Image();
-        $source = "http://lorempixel.com/400/200";
         $imageData->setDescription("")
                 ->setSource("public\images\lglp_logo_1.jpg");
 
@@ -40,8 +39,8 @@ class LoadImageData extends AbstractFixture implements OrderedFixtureInterface
         // Set les données à inscrire en BDD
         //Set the test data to persist in DB here
         $image2Data = new Image();
-        $image2Data->setDescription("Another test picture for my fixture")
-                ->setCaption("A worthless subtitle for the image")
+        $image2Data->setDescription("Unre nouvelle idée du Groupe La Poste")
+                ->setCaption("")
                 ->setSource("public\images\index.jpg");
         // Persiste les données
         // Persist the data
