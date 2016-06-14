@@ -32,6 +32,7 @@
                     <ul>
                     {% for image in article.images %}
                         <li><a href="{{ path('admin_image_show', { 'id': image.id }) }}">{{ image.source }}</a> / {{ image.description }}
+                            <a href="{{ path('admin_article_unlink', { 'id': article.id }) }}">Détacher l'image</a>
                         </li>
                     {% endfor %}
                     </ul>

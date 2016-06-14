@@ -142,11 +142,14 @@ class ArticleController extends Controller
     /**
      * Unlink Article to Image
      * 
-     * @Route("/unlink/{article}&{image}", name="admin_article_unlink")
-     * @param Article $article The Article entity
+     * @Route("/{id}/unlink", name="admin_article_unlink")
+     * 
      */
-    public function unlinkAction(Article $article, $imageId) {
-        var_dump($article);die();
+    public function unlinkAction(Article $article) {
+       
+
+        
+        var_dump($article);
         return $this->redirectToRoute('admin_article_index');
     }
 }
