@@ -59,6 +59,24 @@ class LoadDocumentationData extends AbstractFixture implements OrderedFixtureInt
         $manager->flush();
 
         $this->addReference('doc-test4', $docData4);
+
+        $docData5 = new Documentation();
+        $docData5->setLang("fr")
+                ->setSource("http://www.accede-web.com/notices/html-css-javascript/1-structure/1-1-header-role-banner/");
+
+        $manager->persist($docData5);
+        $manager->flush();
+
+        $this->addReference('doc-test5', $docData5);
+
+        $docData6 = new Documentation();
+        $docData6->setLang("fr")
+                ->setSource("http://www.accede-web.com/notices/html-css-javascript/1-structure/1-3-role-main/");
+
+        $manager->persist($docData6);
+        $manager->flush();
+
+        $this->addReference('doc-test6', $docData6);
     }
 
     public function getOrder() {
