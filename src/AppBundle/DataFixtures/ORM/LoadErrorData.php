@@ -57,6 +57,38 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
         // Persist the data
         $manager->persist($errorArticleData);
         $manager->flush();
+
+        // Set les données à inscrire en BDD
+        // Set the test data to persist in DB here
+        $errorData1 = new Error();
+        // Ajoute une erreur a l'image
+        $errorData1->setTitle("Certains titres de pages n’annoncent pas le nom de la page courante ainsi que le nom du site.")
+                ->setDescription("Sur chaque page, la balise <title> doit être renseignée avec précision.Elle doit au minimum annoncer le nom de la page courante ainsi que le nom du site.")
+                ->setAccedeCode(3)
+                ->setInternCode(3)
+                ->addDocumentation($this->getReference('doc-test3'))
+                ->setTarget('title')
+                ->setCorrection("Comex | Le Groupe La Poste");
+        // Persiste les données
+        // Persist the data
+        $manager->persist($errorData1);
+        $manager->flush();
+
+        // Set les données à inscrire en BDD
+        // Set the test data to persist in DB here
+        $errorData2 = new Error();
+        // Ajoute une erreur a l'image
+        $errorData2->setTitle("Certains paragraphes sont justifiés.")
+                ->setDescription("Aligner le texte à gauche. ")
+                ->setAccedeCode(4)
+                ->setInternCode(4)
+                ->addDocumentation($this->getReference('doc-test4'))
+                ->setTarget('css')
+                ->setCorrection("");
+        // Persiste les données
+        // Persist the data
+        $manager->persist($errorData2);
+        $manager->flush();
     }
 
     public function getOrder() {
