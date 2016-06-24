@@ -77,12 +77,13 @@ class LoadErrorData extends AbstractFixture implements OrderedFixtureInterface{
         // Set the test data to persist in DB here
         $errorData4 = new Error();
         // Ajoute une erreur a l'image
-        $errorData4->setTitle("Certains paragraphes sont justifiés.")
+        $errorData4->setArticle($this->getReference('article-test4'))
+                ->setTitle("Certains paragraphes sont justifiés.")
                 ->setDescription("Aligner le texte à gauche. ")
                 ->setAccedeCode(4)
                 ->setInternCode(4)
                 ->addDocumentation($this->getReference('doc-test4'))
-                ->setTarget('<p>')
+                ->setTarget('content')
                 ->setCorrection("");
         // Persiste les données
         // Persist the data

@@ -83,5 +83,4 @@ class RestController extends FOSRestController
 
         return $this->handleView($view);
     }
-    // TODO: Créer les actions pour récuperer les articles par ID ainsi que la liste des Erreurs
 }

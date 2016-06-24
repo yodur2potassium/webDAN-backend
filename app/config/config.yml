@@ -70,3 +70,11 @@ swiftmailer:
 fos_rest:
     routing_loader:
         default_format: json
+        
+easy_admin:
+    entities:
+        - AppBundle\Entity\Article
+        - AppBundle\Entity\Error
+        - AppBundle\Entity\Image
+        - AppBundle\Entity\Video
+        - AppBundle\Entity\Documentation

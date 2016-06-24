@@ -93,7 +93,7 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
         $article4Data = new Article();
         $article4Data->setTitle("")
                 ->setSubtitle("<h4><strong>&gt;&nbsp;Pour le Groupe, les principaux chiffres sur l'année 2014 sont&nbsp;:</strong></h4>")
-                ->setContent("<p>A l'occasion du conseil d'administration de La Poste du 25&nbsp;février 2015, qui a arrêté les comptes consolidés du Groupe pour l'année 2014, Philippe Wahl a salué les 1<sup>ers</sup>&nbsp;effets des actions mises en œuvre dans le cadre du plan stratégique La&nbsp;Poste 2020&nbsp;: Conquérir l'avenir.</p>
+                ->setContent("<p align=\"justify\">A l'occasion du conseil d'administration de La Poste du 25&nbsp;février 2015, qui a arrêté les comptes consolidés du Groupe pour l'année 2014, Philippe Wahl a salué les 1<sup>ers</sup>&nbsp;effets des actions mises en œuvre dans le cadre du plan stratégique La&nbsp;Poste 2020&nbsp;: Conquérir l'avenir.</p>
                 <ul><li>    22 163<strong> </strong>millions d'euros de chiffre d'affaires (+ 2,1&nbsp;%)</li><li>    719&nbsp;millions d'euros de résultat d'exploitation (-&nbsp;7,6&nbsp;%)</li>
                 <li>    513&nbsp;millions d'euros de résultat net (-&nbsp;17,7&nbsp;%)</li><li>		1&nbsp;052&nbsp;millions d'euros d'investissement (997 millions d'euros en 2013)</li>
                 <li>		9,1&nbsp;milliards d'euros de capitaux propres consolidés</li><li>		4&nbsp;milliards d'euros de dette nette (+&nbsp;200&nbsp;millions d'euros par rapport à&nbsp;2013).<p></p>
