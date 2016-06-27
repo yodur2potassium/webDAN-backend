@@ -124,4 +124,9 @@ class Documentation
     {
         return $this->error;
     }
+    
+    public function __toString() {
+        
+        return $this->source;
+    }
 }

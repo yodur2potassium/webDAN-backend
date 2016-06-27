@@ -335,4 +335,9 @@ class Article
     {
         return $this->errors;
     }
+    
+    public function __toString() {
+        
+        return $this->title;
+    }
 }

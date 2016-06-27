@@ -395,4 +395,9 @@ class Error
     {
         return $this->documentations;
     }
+    
+    public function __toString() {
+        
+        return $this->title;
+    }
 }
