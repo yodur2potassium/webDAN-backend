@@ -31,6 +31,7 @@ framework:
     fragments:       ~
     http_method_override: true
     assets: ~
+    translator: { fallbacks: [ "en" ] }
 
 # Twig Configuration
 twig:
@@ -70,7 +71,7 @@ swiftmailer:
 fos_rest:
     routing_loader:
         default_format: json
-        
+
 easy_admin:
     entities:
         - AppBundle\Entity\Article
