@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\FOSRestController;
 
 /**
- * Ce controller utilise l'autorouting du FOSRestBundle
+ * Ce controleur utilise l'autorouting du FOSRestBundle
  *
  * This Controller uses FOSRest autorouting
  */
